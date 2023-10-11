@@ -15,7 +15,7 @@ router.post('/register', async (req, res) => {
         const user = new User({ name, email, password });
         const payload = {
             user: {
-                id: user.id
+                id: user._id
             }
         }
         
