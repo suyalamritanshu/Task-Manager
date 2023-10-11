@@ -27,7 +27,7 @@ router.post('/register', async (req, res) => {
             }
 
             await user.save();
-            jwt.sign(payload, process.env.jwtUserSecret, (err, token) => {
+            jwt.sign(payload, process.env.JWT_SECRET_KEY, (err, token) => {
                 if (err) throw err;
                 res.status(201).send({
                     success: true,
