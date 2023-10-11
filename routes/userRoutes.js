@@ -17,7 +17,7 @@ router.post('/register', async (req, res) => {
             _id: user._id.toString()
         }, process.env.JWT_SECRET_KEY );
         await user.save();
-        res.status(201).send({ user, message: "User Created Successfully" });
+        res.status(201).send({ user, token, message: "User Created Successfully" });
     }
 
     catch (err) {
